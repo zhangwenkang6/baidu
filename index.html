@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>百度注册</title>
-    <link href="./baidu.min.css"  rel="stylesheet" /> 
+    <link href="./baidu.css"  rel="stylesheet" /> 
 </head>
 <body>
     <img src="./images/baidu.png" class="baidu">
@@ -13,7 +13,7 @@
         <h1>用科技</h1>
         <p>让复杂的世界简单</p>
     </div>
-    <div class="center" >
+    <div class="center">
         <h1>欢迎注册</h1>
         <div class="login">
             <p class="p1">已有帐号？</p>
@@ -38,10 +38,12 @@
             验证码 <input class="code" placeholder="   请输入验证码" id='code'>
             <!-- <button id="getCode">获取验证码</button> -->
             <input class="box" type="button" value="获取验证码" id='getCode'>
+            <br/>
+            <div id="code-message"></div>
         </div>
-        <button id="reg">注册</button>
+        <button id="reg" disabled="disabled">注册</button>
         <div id='check'>
-           <input type="checkbox" checked="checked">阅读并接受《百度用户协议》及《百度隐私政策总则》
+           <input type="checkbox"  id='checkbox'>阅读并接受《百度用户协议》及《百度隐私政策总则》
         </div>
     </div>
 </body>

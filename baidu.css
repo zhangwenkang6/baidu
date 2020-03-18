@@ -1,6 +1,6 @@
 body{
     background:url("./images/back.jpg") no-repeat;
-    overflow: hidden;
+    overflow:auto;
     margin: 0; 
     padding: 0;
     position: relative;
@@ -44,7 +44,7 @@ body{
     float: left;
     width: 480px;
     height: 520px;
-    background-color: rgb(255, 255, 255,0.9);;
+    background-color: rgb(255, 255, 255,0.9);
     margin-top: 80px;
     margin-left: 20%;
     border-radius: 10px;
@@ -91,7 +91,14 @@ body{
     float: left;
     padding-left: 7%;
     opacity: 0.8;
-    margin-bottom: 20px;
+}
+.input1 div{
+    height: 20px;
+    width: 86%;
+    float: left;
+    padding-left: 14%;
+    font-size: 10px;
+    color: red;
 }
 .input input{
     margin-left: 2%;
@@ -131,6 +138,8 @@ body{
     margin-left: 7%;
     font-size: 15px;
     font-weight: bold;
+    opacity: 0.3;
+    outline: none;
 }
 #check{
     float: left;

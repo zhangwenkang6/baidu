@@ -1,7 +1,7 @@
 //实现点击发送验证码的JS效果，即点击后倒计时效果，且按钮变为不可用
 $('#getCode').click(function(){
     var t, a = $('#getCode'), e = 60;
-    alert("已发送验证码"),
+    alert("验证码为123456"),
     a.attr("disabled", "disabled"),
     a.val("请等待 (" + e + " s)"),
     t = window.setInterval(function() {
@@ -15,7 +15,11 @@ $('#getCode').click(function(){
 //表单级别验证
 $('#reg').click(function(){
     console.log('a');
-    if(!checkUser('#user') || !checkTel('#tel') || !checkPaw('#password')) return;
+    if(!checkUser('#user') || !checkTel('#tel') || !checkPaw('#password') || !checkCode('#code')) 
+        return;
+    else{
+        alert('注册成功');
+    }
 })
 //字段级别验证
 $('#user').focusout(function(){
@@ -29,9 +33,29 @@ $('#tel').focusout(function(){
 $('#password').focusout(function(){
     if(!checkPaw('#password')) $('#password').select();
 });
+$('#code').focusout(function(){
+    if(!checkCode('#code')) $('#code').select();
+});
 
+//验证码的验证
+function checkCode(folid) {
+    var $data =$(folid);
+    var $msg = $(folid + '-message');
 
+    if($data.val() != 123456){
+        $msg.html('验证码错误');
+        $data.select();
+        $data.css("outline-color","red");
+        $data.css("border","1px solid red");
+        return false;
+    }
+    $data.css("border","rgb(218, 216, 216) 1px solid");
+    $data.css("outline-color","blue");
+    $msg.html('');
+    return true;
+  }
 
+//用户名的验证
 function checkUser(folid){
     var $data =$(folid);
     var $msg = $(folid + '-message');
@@ -102,3 +126,14 @@ function checkPaw(folid){
     $msg.html('');
     return true;
 }
+
+$("#checkbox").click(function() { 
+    if($('#checkbox').prop('checked') == true){
+        $('#reg').css('opacity', '1');
+        $('#reg').attr("disabled",false);
+    }
+    else{
+        $('#reg').css('opacity', '0.3');
+        $('#reg').attr("disabled",true);
+    }
+});
